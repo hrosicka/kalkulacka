@@ -1,0 +1,28 @@
+<div>
+  <input type="text" [(ngModel)]="display" readonly>
+  <br>
+  <div class="row">
+    <button (click)="addToDisplay('7')">7</button>
+    <button (click)="addToDisplay('8')">8</button>
+    <button (click)="addToDisplay('9')">9</button>
+    <button (click)="operate('/')">/</button>
+  </div>
+  <div class="row">
+    <button (click)="addToDisplay('4')">4</button>
+    <button (click)="addToDisplay('5')">5</button>
+    <button (click)="addToDisplay('6')">6</button>
+    <button (click)="operate('*')">*</button>
+  </div>
+  <div class="row">
+    <button (click)="addToDisplay('1')">1</button>
+    <button (click)="addToDisplay('2')">2</button>
+    <button (click)="addToDisplay('3')">3</button>
+    <button (click)="operate('-')">-</button>
+  </div>
+  <div class="row">
+    <button (click)="addToDisplay('0')">0</button>
+    <button (click)="clearDisplay()">C</button>
+    <button (click)="calculate()">=</button>
+    <button (click)="operate('+')">+</button>
+  </div>
+</div>
