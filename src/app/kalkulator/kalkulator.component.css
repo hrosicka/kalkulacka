@@ -1,77 +1,106 @@
-div {
+.kalkulator-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f0f0f0; /* Světle šedé pozadí */
+  padding: 32px 24px 24px 24px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #e3e9fc 0%, #c5cae9 100%);
+  box-shadow: 0 6px 32px rgba(40, 60, 120, 0.20), 0 1.5px 5px #b8b8b8;
+  max-width: 340px;
+  margin: 40px auto;
 }
 
-input[type="text"] {
-  width: 200px;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 1.5em;
+.kalkulator-display {
+  width: 90%;
+  background: #222f3e;
+  color: #fff;
+  font-size: 2.1em;
   text-align: right;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-button {
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-  font-size: 1em;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #e0e0e0; /* Šedá tlačítka */
-}
-
-button:hover {
-  background-color: #d0d0d0; /* Tmavší šedá při najetí myší */
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 12px rgba(40,60,120,0.06);
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
 }
 
 .row {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 10px;
 }
 
-.row button:nth-child(4) { /* Poslední tlačítko v každém řádku (operátor) */
-  background-color: #a0a0a0; /* Tmavší šedá pro operátory */
-  color: white;
+.kalkulator-btn {
+  flex: 1;
+  height: 54px;
+  font-size: 1.15em;
+  border: none;
+  border-radius: 12px;
+  margin: 0;
+  background: #f8fafc;
+  color: #222f3e;
+  box-shadow: 0 2px 4px rgba(40, 60, 120, 0.07);
+  cursor: pointer;
+  transition: background 0.18s, transform 0.10s, box-shadow 0.16s;
+  font-weight: 500;
+  outline: none;
+  user-select: none;
 }
 
-.row button:nth-child(4):hover {
-  background-color: #808080; /* Ještě tmavší při najetí */
+.kalkulator-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 2px rgba(40,60,120,0.15);
 }
 
-/* Specifické styly pro C a = */
-.row:last-child button:nth-child(2) { /* Tlačítko C v posledním řádku */
-  background-color: #f44336; /* Červená pro "C" */
-  color: white;
+.kalkulator-btn.operator {
+  background: #6c63ff;
+  color: #fff;
+  font-weight: 600;
 }
 
-.row:last-child button:nth-child(2):hover {
-  background-color: #d32f2f;
+.kalkulator-btn.operator:active {
+  background: #5548c8;
 }
 
-.row:last-child button:nth-child(3) { /* Tlačítko = v posledním řádku */
-  background-color: #4caf50; /* Zelená pro "=" */
-  color: white;
+.kalkulator-btn.equal {
+  background: #fa982f;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2em;
 }
 
-.row:last-child button:nth-child(3):hover {
-  background-color: #388e3c;
+.kalkulator-btn.equal:active {
+  background: #cb7b21;
 }
 
-/* Styl pro operátor + v posledním řádku */
-.row:last-child button:nth-child(4) {
-  background-color: #a0a0a0; /* Tmavší šedá pro + */
-  color: white;
+.kalkulator-btn.clear {
+  background: #ef5350;
+  color: #fff;
+  font-weight: 700;
 }
 
-.row:last-child button:nth-child(4):hover {
-  background-color: #808080;
+.kalkulator-btn.clear:active {
+  background: #b71c1c;
+}
+
+@media (max-width: 400px) {
+  .kalkulator-container {
+    padding: 18px 4px;
+    max-width: 98vw;
+  }
+  .kalkulator-display {
+    font-size: 1.4em;
+    padding: 10px 7px;
+  }
+  .row {
+    gap: 5px;
+  }
+  .kalkulator-btn {
+    font-size: 1em;
+    height: 44px;
+    border-radius: 8px;
+  }
 }
